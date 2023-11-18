@@ -2,14 +2,14 @@
 # tool to compile it into the dist folder. The dist folder exists so that my
 # binaries don't get shipped to github.
 
-if [ $1 == "c" ]; then
+if [ $1 == "-c" ]; then
     gcc c/main.c -o dist/main
 fi
 
-#if [ $1 == "r" ]; then
+#if [ $1 == "-r" ]; then
 #    cargo build rust/main.rs -o dist/main
 #fi
 
-#if [ $1 == "g" ]; then
+#if [ $1 == "-g" ]; then
 #    go build go/main.go -o dist/main
 #fi
