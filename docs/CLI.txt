@@ -1,0 +1,28 @@
+The CLI in main.c largely exists for testing purposes but I have documented it here anyways. You
+can also just include set.h in your project and implement the functions however you like. I will
+do a full API writeup later. 
+
+There are four command line flags this binary accepts and each of them requires two additional
+arguments. All this CLI does is create a Set and print it to the screen. 
+
+Sets used as input for the CLI are in the form of integers separated by commas like so:
+0,1,2,3,4,5,6,6,6,7,8,9,10,11,
+The trailing comma is required.
+
+
+*** Flags ***
+    -n
+    Use this flag to initiate a Set with an integer, arg 1 is the int to insert.
+    argv 2 is the size to allocate.
+
+    -i
+    Use this flag to insert an integer into a Set, arg 1 is target Set, 
+    arg 2 is the int to insert.
+
+    -a
+    Use this flag to insert an array into a Set, arg 1 is target Set,
+    arg 2 is the Set to insert.
+
+    -r
+    Use this flag to remove an integer from a Set, arg 1 is target Set,
+    arg 2 is the int to remove.

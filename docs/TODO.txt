@@ -1,0 +1,9 @@
+TODO
+    *write test suite
+    *write sets.go
+    *write sets.rs
+
+
+Changelog
+v0.0.1
+Added sets.h and main.c

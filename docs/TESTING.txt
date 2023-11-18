@@ -1,0 +1,4 @@
+The test suite will be written in Python and every version of the binary 
+will have the same CLI, so the test suite wil run on each binary and 
+should get the same results. I'm writing the test suite now, and it will
+be in the next commit, along with further documentation.
