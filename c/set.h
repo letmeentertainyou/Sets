@@ -64,7 +64,7 @@ struct Set *initSetWithInt(int value, int size) {
     // This cast was needed for set.h but not set.c
     struct Set *newSetPtr =
         (struct Set *)malloc(sizeof(struct Set) + size * sizeof(int));
-    // This fills the set with zeroes. It's fundamental.
+    // This sets the size and length attributes of the set.
     *newSetPtr = (struct Set){size, 0};
     // This is required because values is dynamic so it can't be cast above.
     newSetPtr->values[0] = value;
