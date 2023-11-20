@@ -9,5 +9,6 @@ v0.0.1
 Added sets.h and main.c
 
 v0.0.2
-Gave the insertInt function the ability to create a new Set if it's given a NULL pointer. (I had tried to do that originally but my understanding of pointers was flawed.)
+Gave the insertInt function the ability to create a new Set if it's given a NULL pointer. 
+(I had tried to do that originally but my understanding of pointers was flawed.)
 Cleaned up the initSetWithInt function as well.
