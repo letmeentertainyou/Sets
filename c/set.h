@@ -61,11 +61,12 @@ void printSet(struct Set *set) {
 
 /* Initializes a Set with the given value as a the first member of the set.*/
 struct Set *initSetWithInt(int value, int size) {
-    struct Set newSet = {size, 0};
     // This cast was needed for set.h but not set.c
     struct Set *newSetPtr =
         (struct Set *)malloc(sizeof(struct Set) + size * sizeof(int));
-    *newSetPtr = newSet;
+    // This fills the set with zeroes. It's fundamental.
+    *newSetPtr = (struct Set){size, 0};
+    // This is required because values is dynamic so it can't be cast above.
     newSetPtr->values[0] = value;
     return newSetPtr;
 }
@@ -103,6 +104,11 @@ struct Set *removeInt(struct Set *set, int value) {
 /* Takes an integer and attempts to add it to the set. If Set->length equals
  * Set->size then the Set is automatically resized to be twice as big. */
 struct Set *insertInt(struct Set *set, int value) {
+    // You must send NULL if you want to create a Set from nothing
+    // But it does work now.
+    if (set == NULL) {
+        return initSetWithInt(value, 8);
+    }
     if (set->length < set->size - 1) {
         if (!isMember(set->values, value, set->length)) {
             set->length++;
