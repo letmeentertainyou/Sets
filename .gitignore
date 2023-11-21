@@ -1,5 +1,7 @@
 dist
 go
 rel
-rust
+#rust
 .vscode
+Cargo.lock
+Cargo.toml

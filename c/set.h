@@ -64,7 +64,7 @@ struct Set *initSetWithInt(int value, int size) {
     // This cast was needed for set.h but not set.c
     struct Set *newSetPtr =
         (struct Set *)malloc(sizeof(struct Set) + size * sizeof(int));
-    // This sets the size and length attributes of the set.
+    // This sets the size and length attributes of the Set.
     *newSetPtr = (struct Set){size, 0};
     // This is required because values is dynamic so it can't be cast above.
     newSetPtr->values[0] = value;
@@ -101,11 +101,10 @@ struct Set *removeInt(struct Set *set, int value) {
     }
 }
 
-/* Takes an integer and attempts to add it to the set. If Set->length equals
- * Set->size then the Set is automatically resized to be twice as big. */
+/* Takes a Set and an int, and if that int isn't in the Set, inserts it. When
+ * Set->length is less than half of Set->size, the Set is automatically resized.
+ */
 struct Set *insertInt(struct Set *set, int value) {
-    // You must send NULL if you want to create a Set from nothing
-    // But it does work now.
     if (set == NULL) {
         return initSetWithInt(value, 8);
     }

@@ -1,7 +1,7 @@
 TODO
     *write test suite
     *write sets.go
-    *write sets.rs
+    *write sets.rs    DONE
 
 
 Changelog
@@ -12,3 +12,7 @@ v0.0.2
 Gave the insertInt function the ability to create a new Set if it's given a NULL pointer. 
 (I had tried to do that originally but my understanding of pointers was flawed.)
 Cleaned up the initSetWithInt function as well.
+
+v0.0.3
+Wrote the full implementation of Set in rust/set.rs. I still need to build
+the CLI in rust/main.rs.

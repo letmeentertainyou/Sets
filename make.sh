@@ -6,9 +6,10 @@ if [ $1 == "-c" ]; then
     gcc c/main.c -o dist/main
 fi
 
-#if [ $1 == "-r" ]; then
-#    cargo build rust/main.rs -o dist/main
-#fi
+if [ $1 == "-r" ]; then
+    # Change this to main.rs when needed.
+    rustc rust/set.rs -o dist/main
+fi
 
 #if [ $1 == "-g" ]; then
 #    go build go/main.go -o dist/main
