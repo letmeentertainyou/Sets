@@ -1,6 +1,10 @@
+UPDATE 
+I chose not to write any tests after all and so this document is kind of a relic of my old plan.
+
+***
+
 The CLI in main.c largely exists for testing purposes but I have documented it here anyways. You
-can also just include set.h in your project and implement the functions however you like. I will
-do a full API writeup later. 
+can also just include set.h in your project and implement the functions however you like.
 
 There are four command line flags this binary accepts and each of them requires two additional
 arguments. All this CLI does is create a Set and print it to the screen. 

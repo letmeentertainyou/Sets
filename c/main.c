@@ -6,13 +6,6 @@
 
 #include "set.h"
 
-/* The CLI exits after a single use so the Set only needs to be printed
- * and then freed.*/
-void printFree(struct Set *set) {
-    printSet(set);
-    free(set);
-}
-
 int main(int argc, char *argv[]) {
 
     if (argc == 4) {
@@ -22,7 +15,7 @@ int main(int argc, char *argv[]) {
         if (strcmp(argv[1], "-n") == 0) {
             printf("Inserting %s into a Set of size: %s.\n", argv[2], argv[3]);
             set = initSetWithInt(atoi(argv[2]), atoi(argv[3]));
-            printFree(set);
+            printSet(set);
         }
 
         // insertInt
@@ -31,7 +24,7 @@ int main(int argc, char *argv[]) {
             printf("Inserting %s into the set %s\n", argv[3], argv[2]);
             set = initSetWithString(argv[2]);
             set = insertInt(set, atoi(argv[3]));
-            printFree(set);
+            printSet(set);
         }
 
         // insertArray
@@ -41,7 +34,7 @@ int main(int argc, char *argv[]) {
             set = initSetWithString(argv[2]);
             struct Set *set2 = initSetWithString(argv[3]);
             set = insertArray(set, set2->values, set2->length + 1);
-            printFree(set);
+            printSet(set);
         }
 
         // removeInt
@@ -50,7 +43,7 @@ int main(int argc, char *argv[]) {
             printf("Removing %s from the set %s\n", argv[3], argv[2]);
             set = initSetWithString(argv[2]);
             set = removeInt(set, atoi(argv[3]));
-            printFree(set);
+            printSet(set);
         }
 
     } else {

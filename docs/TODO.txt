@@ -1,7 +1,6 @@
 TODO
-    *write test suite
-    *write sets.go
-    *write sets.rs    DONE
+    *write sets.go      DONE
+    *write sets.rs      DONE
 
 
 Changelog
@@ -16,3 +15,7 @@ Cleaned up the initSetWithInt function as well.
 v0.0.3
 Wrote the full implementation of Set in rust/set.rs. I still need to build
 the CLI in rust/main.rs.
+
+v0.0.5
+Added go/set.go, added a new doc called POSTMORTEM.txt in which I wrote about
+what I learned during this project.

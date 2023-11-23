@@ -3,10 +3,6 @@ I had originally intended to create a type agnostic Set like in Python but it
 turns out to be really hard to have arrays of different types because of
 allocation. Which is why I am only using the data type int in this file.
 
-Technically these sets would support other data types if you changed most of the
-occurrences of int to the other data type. Set->length and Set->size still need
-to be numbers though so a find and replace is not a perfect answer.
-
 I realize that the C language convention is to use underscores in names but
 after using camelCase in JS I can't make myself switch back. I don't like typing
 all those underscores.

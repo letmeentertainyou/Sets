@@ -1,16 +1,13 @@
 /*
-I wanted this file to have the same API as the set.c file which is why the method names
+I wanted this file to have the same API as c/set.h which is why the method names
 are the same. In general Vectors are already a fully thought out version of an array so I
 didn't need to write most of the code that I wrote in C.
-
-I still have to implement the CLI in a file called main.rs. That will be in the next commit.
 
 I am aware that the goal of Rust is to write memory safe code, but unlike the C code I did
 not find myself having to allocate any memory or constantly resize my Sets. It seems like
 the Vec type is handling all of that for me. Neato!
 */
 
-// As a lifelong Pyton user, I can't look at any_more_snake_case_names.
 #![allow(non_snake_case)]
 
 /* The basic struct that forms a Set. */
@@ -19,7 +16,7 @@ struct Set {
 }
 
 impl Set {
-    /* Initializes a Set with the given value as a the first member of the set.*/
+    /* Initializes a Set with the given value as a the first member of the Set.*/
     fn initSetWithInt(value: i32) -> Set {
         let mut set = Set { values: Vec::new() };
         set.insertInt(value);
@@ -27,7 +24,7 @@ impl Set {
     }
 
     /* This function combines the initSetWithInt and insertInt functions to be able
-     * to init a set with an array of ints. Similar to set([0, 1, 2, 3, 4]) in
+     * to init a Set with an array of ints. Similar to set([0, 1, 2, 3, 4]) in
      * Python. */
     fn initSetWithArray(values: Vec<i32>) -> Set {
         let mut set: Set = Set::initSetWithInt(values[0]);
@@ -52,19 +49,20 @@ impl Set {
     }
 
     /* Iterates over an array, and calls insertInt on each element. */
-    fn insertArray(&mut self, _values: Vec<i32>) {
-        for value in _values {
+    fn insertArray(&mut self, values: Vec<i32>) {
+        for value in values {
             self.insertInt(value);
         }
     }
 
-    /* This allows me to quickly see the contents of a set. */
+    /* This allows me to quickly see the contents of a Set. */
     fn printSet(&mut self) {
         println!("{:?}", self.values);
     }
 }
 
 fn main() {
+    // Example usage:
     let mut set = Set::initSetWithArray(vec![1, 2, 3]);
     set.insertInt(345);
     set.insertArray(vec![4, 4, 4]);

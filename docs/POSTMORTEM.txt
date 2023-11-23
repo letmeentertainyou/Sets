@@ -1,0 +1,27 @@
+This is my first published low level project and it was my first time writing the same code in
+three different low level languages. It was fun implementing Sets but next time I want to write
+something more substantial.
+
+I had a lot of ideas about how to write a testing suite while I was developing the C code. I had
+these ideas because I kept running into new unique segfaults in C. I never encountered any of 
+those pains in Rust and Go, and that led me to think testing might be overkill. If I do write 
+some tests they will be for the C code only because the C language doesn't provide any kind of 
+memory safety.
+
+My original thoughts were that I wanted to write the test suite with pytest because it's a tool I 
+know well and because I would need some third party tool to test three unique binaries anyways. I 
+developed the CLI in c/main.c for this purpose. I never implemented that CLI into Go/Rust because 
+I moved on from my goals to test all three languages.
+
+Now that I know more I think I'd rather write my test suite in C, and just have the test file 
+import set.h. I've never done anything like that before and it occurs to me that compiling the 
+test suite before I run it could be a real pain. I'll definitely learn more about testing 
+methodologies on my next low level project.
+
+I also recently learned that Go code can import C files and compile them. So I think I could 
+have just used set.h in my Go code. I will keep that in mind the next time I am combining those two 
+languages. I think there are some things that are a bit faster than Go in my C code. Although I 
+don't know if the Go compiler leaves that speed on the cutting room floor.
+
+This project is pretty much done now which is why I wrote this document. If I think of anything 
+else cool that I learned or wanted to note I will update this document.

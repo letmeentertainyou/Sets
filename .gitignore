@@ -1,5 +1,5 @@
 dist
-go
+#go
 rel
 #rust
 .vscode
